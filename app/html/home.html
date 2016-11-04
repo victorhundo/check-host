@@ -1,0 +1,21 @@
+<table class="mdl-data-table mdl-js-data-table" ng-repeat="machine in machines">
+   <caption>{{machine.name}}</caption>
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Name</th>
+      <th>Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="container in machine.containers">
+
+      <td ng-if="!container.updated" class="mdl-data-table__cell--non-numeric mdl-color--red-500" >{{container.name}}</td>
+      <td ng-if="!container.updated" class="mdl-data-table__cell--non-numeric mdl-color--red-500">{{container.updated}}</td>
+
+      
+      <td ng-if="container.updated" class="mdl-data-table__cell--non-numeric mdl-color--light-green-500" >{{container.name}}</td>
+      <td ng-if="container.updated" class="mdl-data-table__cell--non-numeric mdl-color--light-green-500">{{container.updated}}</td>
+
+    </tr>
+  </tbody>
+</table>
